@@ -1,4 +1,5 @@
 import './globals.css';
+/* add { } if the component is not default export */ 
 import { Inter } from 'next/font/google';
 import Header from "@/components/header";
 

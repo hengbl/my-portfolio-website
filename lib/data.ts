@@ -97,7 +97,7 @@ export const projectsData = [
     description: "Trained multiple classification models to accurately predict prices of SG HDB resale flats from 2012 to 2021 based on flat features as well as nearby amenities and transportation.",
     tags: ["Numpy", "Pandas", "Seaborn", "GeoPy", "Scikit-Learn", "XGBoost"],
     imageUrl: hdbImg,
-    githubURL: "https://github.com/hengbl/HDB-Resale-Price-Prediction",
+    githubUrl: "https://github.com/hengbl/HDB-Resale-Price-Prediction",
   }
 ] as const;
 

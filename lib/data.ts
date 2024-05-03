@@ -78,7 +78,7 @@ export const projectsData = [
     title: "ConnectHub",
     description:
       "ConnectHub is a website that aims to bring our community together by allowing users to create community interest groups and sell/buy items within their neighbourhood.",
-    tags: ["Vue.js", "Firebase", "Git"],
+    tags: ["Vue.js", "Firebase", "Git", "Figma"],
     imageUrl: chImg,
   },
 ] as const;

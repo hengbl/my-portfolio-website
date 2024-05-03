@@ -4,11 +4,13 @@ import React, { useRef } from 'react';
 import { projectsData } from '@/lib/data';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from "framer-motion";
+import { GiClick } from "react-icons/gi";
+import { FaGithub } from "react-icons/fa";
 
 
 type ProjectProps = (typeof projectsData)[number];
 
-export default function Project({ title, description, tags, imageUrl }: ProjectProps) {
+export default function Project({ title, description, tags, imageUrl, githubUrl }: ProjectProps) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -32,6 +34,11 @@ export default function Project({ title, description, tags, imageUrl }: ProjectP
                 group-even:ml-[28rem]">
                     <h3 className="text-2xl font-semibold">{ title }</h3>
                     <p className="mt-2 leading-relaxed text-gray-700">{ description }</p>
+                    <a href={githubUrl} className="group/gh flex items-center gap-2 mt-3">
+                        <FaGithub className="text-xl group-hover/gh:text-red-600" /> 
+                            <span className="italic underline text-gray-600 group-hover/gh:text-red-600">View source code here</span> 
+                        <GiClick className="text-xl group-hover/gh:text-red-600" />
+                    </a>
                     <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
                         {tags.map((tag, index) => (
                             <li className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full"

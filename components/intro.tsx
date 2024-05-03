@@ -48,12 +48,12 @@ export default function Intro() {
             </div>
 
             {/* Introduction Message */}
-            <motion.p className={`${robotoMono.className} mb-10 mt-4 px-4 text-xl font-medium !leading-[1.5] sm:text-2xl`}
+            <motion.h1 className={`${robotoMono.className} mb-10 mt-4 px-4 text-xl font-medium !leading-[1.5] sm:text-2xl`}
             initial={{ opacity: 0, y: 100}}
             animate={{ opacity: 1, y: 0 }}
             >
                 <span className="font-bold">Hello, I'm Boon Long!</span> I enjoy building Data Science and Web Development projects. <span className="font-thin">|</span>
-            </motion.p>
+            </motion.h1>
 
             <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-s font-medium"
             initial={{ opacity: 0, y: 100}}

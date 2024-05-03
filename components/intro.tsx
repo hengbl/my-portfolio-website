@@ -9,13 +9,16 @@ import { BsArrowRight } from 'react-icons/bs';
 import { HiDownload } from 'react-icons/hi';
 import { BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
-
+import { useSectionInView } from '@/lib/hooks';
 
 const robotoMono = Roboto_Mono({ weight:["100", "400","700"], subsets: ['latin'] });
 
 export default function Intro() {
+
+  const { ref } = useSectionInView("Home", 0.5);
+
   return (
-    <section id="home" className="h-screen mb-28 max-w-[50rem] text-center sm:mt-20 sm:mb-[-10rem] scroll-mt-[100rem]">
+    <section ref={ref} id="home" className="h-screen mb-28 max-w-[50rem] text-center sm:mt-20 sm:mb-[-10rem] scroll-mt-[100rem]">
         <div className="flex-col flex items-center justify-center">
 
             {/* Profile Image and Waving Emoji */}

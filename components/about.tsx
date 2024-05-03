@@ -3,12 +3,15 @@
 import React, { useRef } from 'react';
 import SectionHeading from './section-heading';
 import { motion, useScroll, useTransform } from "framer-motion";
-
+import { useSectionInView } from '@/lib/hooks';
 
 export default function About() {
-  const ref = useRef<HTMLDivElement>(null);
+
+  const { ref } = useSectionInView("About", 0.75);
+
+  const ref2 = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
-        target: ref,
+        target: ref2,
         offset: ["0 1", "1.33 1"]
     });
     const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1])
@@ -16,12 +19,12 @@ export default function About() {
 
   return (
     <motion.div
-    ref={ref}
+    ref={ref2}
     style={{
       scale: scaleProgress,
       opacity: opacityProgress
     }}>
-      <section className="mb-28 max-w-[60rem] text-center leading-8 sm:mb-40 scroll-mt-28"
+      <section ref={ref} className="mb-28 max-w-[60rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       id="about"
       >
           <SectionHeading>{`<`}About Me{`/>`}</SectionHeading>

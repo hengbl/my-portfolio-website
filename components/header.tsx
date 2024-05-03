@@ -6,7 +6,7 @@ import { links } from "@/lib/data";
 import { Roboto_Mono } from 'next/font/google';
 import Link from 'next/link';
 
-const robotoMono = Roboto_Mono({ weight:"400", subsets: ['latin'] });
+const robotoMono = Roboto_Mono({ weight:["400", "700"], subsets: ['latin'] });
 
 export default function Header() {
   return <header className="z-[999] relative">
@@ -35,7 +35,8 @@ export default function Header() {
                     initial={{ y: -100,  opacity: 0 }}
                     animate={{ y: 0, opacity: 1}}
                 >
-                    <Link className="flex w-full items-center justify-center px-3 py-3 hover:text-purple-950 transition" href={link.hash}>{link.name}</Link>
+                    <Link className="flex w-full items-center justify-center px-3 py-3 focus:scale-110 hover:scale-110 hover:text-purple-950 hover:font-bold transition" 
+                    href={link.hash}>{link.name}</Link>
                 </motion.li>
             ))}
             <motion.span 

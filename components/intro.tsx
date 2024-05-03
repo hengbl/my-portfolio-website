@@ -11,11 +11,11 @@ import { BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
 
 
-const robotoMono = Roboto_Mono({ weight:["200", "400","700"], subsets: ['latin'] });
+const robotoMono = Roboto_Mono({ weight:["100", "400","700"], subsets: ['latin'] });
 
 export default function Intro() {
   return (
-    <section id="home" className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
+    <section id="home" className="h-screen mb-28 max-w-[50rem] text-center sm:mt-20 sm:mb-[-10rem] scroll-mt-[100rem]">
         <div className="flex-col flex items-center justify-center">
 
             {/* Profile Image and Waving Emoji */}
@@ -29,9 +29,9 @@ export default function Intro() {
                     }}
                 >
                     <Image src="/profile-pic.png" alt="Portrait" 
-                    width="192" height="192" 
+                    width="250" height="250" 
                     priority={true} 
-                    className="h-100 w-100 rounded-full object-cover border-[0.35rem] border-white shadow-xl" 
+                    className="h-250 w-250 rounded-full object-cover border-[0.35rem] border-white shadow-xl" 
                     />
                     <motion.span className="absolute bottom-0 right-0 text-4xl"
                         initial={{ opacity: 0, scale: 0}}
@@ -48,7 +48,7 @@ export default function Intro() {
             </div>
 
             {/* Introduction Message */}
-            <motion.h1 className={`${robotoMono.className} mb-10 mt-4 px-4 text-xl font-medium !leading-[1.5] sm:text-2xl`}
+            <motion.h1 className={`${robotoMono.className} mb-10 mt-4 px-4 text-xl font-medium !leading-[1.5] sm:text-[1.7rem]`}
             initial={{ opacity: 0, y: 100}}
             animate={{ opacity: 1, y: 0 }}
             >

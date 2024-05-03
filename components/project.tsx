@@ -34,7 +34,7 @@ export default function Project({ title, description, tags, imageUrl, githubUrl 
                 group-even:ml-[28rem]">
                     <h3 className="text-2xl font-semibold">{ title }</h3>
                     <p className="mt-2 leading-relaxed text-gray-700">{ description }</p>
-                    <a href={githubUrl} className="group/gh flex items-center gap-2 mt-3">
+                    <a href={githubUrl} target="_blank" className="group/gh flex items-center gap-2 mt-3 mb-5">
                         <FaGithub className="text-xl group-hover/gh:text-red-600" /> 
                             <span className="italic underline text-gray-600 group-hover/gh:text-red-600">View source code here</span> 
                         <GiClick className="text-xl group-hover/gh:text-red-600" />

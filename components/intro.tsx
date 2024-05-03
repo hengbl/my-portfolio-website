@@ -15,7 +15,7 @@ const robotoMono = Roboto_Mono({ weight:["200", "400","700"], subsets: ['latin']
 
 export default function Intro() {
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section id="home" className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
         <div className="flex-col flex items-center justify-center">
 
             {/* Profile Image and Waving Emoji */}

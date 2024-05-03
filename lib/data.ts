@@ -73,6 +73,7 @@ export const projectsData = [
       "BiasBusters is a telegram bot that provides sentiment analysis on any NUS module through Reddit reviews and using our pre-trained ML model.",
     tags: ["Python", "MongoDB", "Scikit-Learn", "TensorFlow", "Telebot"],
     imageUrl: bbImg,
+    githubUrl: "https://github.com/hengbl/BiasBusters",
   },
   {
     title: "ConnectHub",
@@ -80,6 +81,7 @@ export const projectsData = [
       "ConnectHub is a website that aims to bring our community together by allowing users to create community interest groups and sell/buy items within their neighbourhood.",
     tags: ["Vue.js", "Firebase", "Git", "Figma"],
     imageUrl: chImg,
+    githubUrl: "https://github.com/BT3103AppDev1/l2-final-term-project-l2-group-15",
   },
 ] as const;
 

@@ -35,7 +35,7 @@ export default function Skills() {
                 {
                     techStackUrl.map((item, index) => (
                         <motion.li key={index}
-                        className="bg-white border border-black/[0.1] rounded-2xl px-5 py-3 focus:scale-110 hover:scale-110"
+                        className="bg-white border border-black/[0.1] rounded-2xl px-5 py-3"
                         variants={fadeInAnimationVariants}
                         initial="initial"
                         whileInView="animate"

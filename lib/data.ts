@@ -1,6 +1,8 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { SiGooglebigquery } from "react-icons/si";
+import { IoLogoTableau } from "react-icons/io5";
+import { LuBrainCircuit } from "react-icons/lu";
+import { MdOutlinePolicy } from "react-icons/md";
 import bbImg from "@/public/biasbuster.png";
 import chImg from "@/public/connecthub.png";
 import hdbImg from "@/public/hdb.png";
@@ -35,37 +37,37 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Data Analyst Intern, SGInnovate",
-    location: "Singapore",
+    title: "Software Engineer Intern, Policyme",
+    location: "Toronto, Ontario",
     description:
-      "XXX",
-    icon: React.createElement(CgWorkAlt),
-    date: "May 2023 - Jul 2023",
-  },
-  {
-    title: "Data Analyst Intern, Affyn",
-    location: "Singapore",
-    description:
-      "XXX",
-    icon: React.createElement(CgWorkAlt),
-    date: "Sep 2023 - Jan 2024",
+      "(Incoming intern)",
+    icon: React.createElement(MdOutlinePolicy),
+    date: "Aug 2024 - Jul 2025",
   },
   {
     title: "AI/Data Intern, Deloitte Consulting",
     location: "Singapore",
     description:
-      "XXX",
-    icon: React.createElement(FaReact),
-    date: "May 2024 - Aug 2024",
+      "(Incoming intern)",
+    icon: React.createElement(LuBrainCircuit),
+    date: "Jul 2024 - Aug 2024",
   },
   {
-    title: "Software Engineer Intern, Policyme",
-    location: "Toronto, Ontario",
+    title: "Data Analyst Intern, Affyn",
+    location: "Singapore",
     description:
-      "XXX",
-    icon: React.createElement(FaReact),
-    date: "Aug 2024 - Jul 2025",
+      "Affyn is a Web 3.0 Gaming and Metaverse Company. I developed ETL pipelines and architected performance dashboards for gaming and social media analytics. I also conducted econometric analysis to enhance user retention strategies, providing actionable insights for business improvements.",
+    icon: React.createElement(SiGooglebigquery),
+    date: "Sep 2023 - Jan 2024",
   },
+  {
+    title: "Data Analyst Intern, SGInnovate",
+    location: "Singapore",
+    description:
+      "SGInnovate is a Deep Tech innovation firm. I was part of the Digital Strategy & Analytics team to streamline operations by building dashboards for several departments and analysing user journeys to formulate strategies in expanding Singapore's deep tech ecosystem.",
+    icon: React.createElement(IoLogoTableau),
+    date: "May 2023 - Jul 2023",
+  }
 ] as const;
 
 export const projectsData = [
@@ -99,28 +101,6 @@ export const projectsData = [
     imageUrl: hdbImg,
     githubUrl: "https://github.com/hengbl/HDB-Resale-Price-Prediction",
   }
-] as const;
-
-export const skillsData = [
-  "Python",
-  "Java",
-  "R",
-  "SQL",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "MongoDB",
-  "PostgreSQL",
-  "Tableau",
-  "Alteryx",
-  "Google Cloud Platform",
-  "Amazon Web Service"
 ] as const;
 
 export const techStackUrl = [

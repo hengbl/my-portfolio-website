@@ -122,3 +122,81 @@ export const skillsData = [
   "Google Cloud Platform",
   "Amazon Web Service"
 ] as const;
+
+export const techStackUrl = [
+  {
+    skill: "Python",
+    url: "/python.svg"
+  },
+  {
+    skill: "Java",
+    url: "/java.svg"
+  },
+  {
+    skill: "JavaScript",
+    url: "/js.svg"
+  },
+  {
+    skill: "TypeScript",
+    url: "/ts.svg"
+  },
+  {
+    skill: "HTML",
+    url: "/html.svg"
+  },
+  {
+    skill: "CSS",
+    url: "/css.svg"
+  },
+  {
+    skill: "Tailwind",
+    url: "/tailwind.svg"
+  },
+  {
+    skill: "Vue.js",
+    url: "/vue.svg"
+  },
+  {
+    skill: "Next.js",
+    url: "/nextjs.svg"
+  }, 
+  {
+    skill: "MySQL",
+    url: "/mysql.svg"
+  },
+  {
+    skill: "PostgreSQL",
+    url: "/pgsql.svg"
+  },
+  {
+    skill: "MongoDB",
+    url: "/mongodb.svg"
+  },
+  {
+    skill: "Firebase",
+    url: "/firebase.svg"
+  }
+] as const;
+
+export const libraries = [
+  {
+    skill: "NumPy",
+    url: "/numpy.svg"
+  },
+  {
+    skill: "Pandas",
+    url: "/pandas.svg"
+  },
+  {
+    skill: "Seaborn",
+    url: "/seaborn.svg"
+  },
+  {
+    skill: "Scikit-Learn",
+    url: "/sklearn.svg"
+  },
+  {
+    skill: "PyTorch",
+    url: "/pytorch.svg"
+  }
+] as const;

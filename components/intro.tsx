@@ -5,10 +5,6 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 import { Roboto_Mono } from 'next/font/google';
 import Link from 'next/link';
-import { BsArrowRight } from 'react-icons/bs';
-import { HiDownload } from 'react-icons/hi';
-import { BsLinkedin } from 'react-icons/bs';
-import { FaGithubSquare } from 'react-icons/fa';
 import { useSectionInView } from '@/lib/hooks';
 
 const robotoMono = Roboto_Mono({ weight:["100", "400","700"], subsets: ['latin'] });
@@ -55,42 +51,46 @@ export default function Intro() {
             initial={{ opacity: 0, y: 100}}
             animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">Hello, I'm Boon Long!</span> I enjoy building Data Science and Web Development projects. <span className="font-thin">|</span>
+                <span className="font-bold">Hello, I'm Boon Long </span> 
+                <span className="mr-0">and an aspiring Data Scientist / Engineer based in Singapore</span>
+                <Image src="/singapore.png" alt="Singapore" width="30" height="30" className="ml-0" />
+                <span className="font-thin">|</span>
             </motion.h1>
 
-            <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-s font-medium"
+            <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-7 px-4"
             initial={{ opacity: 0, y: 100}}
             animate={{ opacity: 1, y: 0 }}
             transition={{
                 delay: 0.1,
             }}
-            >
-                {/* Download CV */}
-                <a className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
-                focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition cursor-pointer"
-                href="/CV.pdf" download={ true }>
-                    Download CV <HiDownload className="opacity-70 group-hover:translate-y-1 transition"/>
-                </a>
-
-                {/* Redirect to Contact Me section */}
-                <Link href="#contact" className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
-                focus:scale-110 hover:scale-110 active:scale-105 transition border border-black/10">
-                    Contact me here <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition"/>
-                </Link>
-
+            >   
                 {/* Redirect to Linkedin */}
-                <a className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none 
-                focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition border border-black/10 cursor-pointer"
-                href="https://www.linkedin.com/in/hengboonlong/" target="_blank">
-                    <BsLinkedin />
+                <a className="group flex flex-col items-center gap-2"
+                href="https://github.com/hengbl" target="_blank">
+                    <Image src="/github.png" alt="github" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
+                    <span className={`${robotoMono.className} text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity`}>Github</span>
                 </a>
 
                 {/* Redirect to Github */}
-                <a className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.35rem] outline-none 
-                focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition border border-black/10 cursor-pointer"
-                href="https://github.com/hengbl" target="_blank">
-                    <FaGithubSquare />
+                <a className="group flex flex-col items-center gap-2"
+                href="https://www.linkedin.com/in/hengboonlong/" target="_blank">
+                    <Image src="/linkedin.png" alt="linkedin" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
+                    <span className={`${robotoMono.className} text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity`}>LinkedIn</span>
                 </a>
+                
+                {/* Download CV */}
+                <Link className="group flex flex-col items-center gap-2"
+                href="/CV.pdf" download={ true }>
+                    <Image src="/cv.png" alt="cv" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
+                    <span className={`${robotoMono.className} text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity`}>Portfolio</span>
+                </Link>
+
+                {/* Redirect to Contact Me section */}
+                <Link href="#contact" className="group flex flex-col items-center gap-2">
+                    <Image src="/mail.png" alt="email" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
+                    <span className={`${robotoMono.className} text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity`}>Email</span>
+                </Link>
+
 
             </motion.div>
 

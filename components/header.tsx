@@ -45,13 +45,12 @@ export default function Header() {
 
     <nav className="flex fixed top-[0.15rem] left-3/4 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         
-        <ul className={`${robotoMono.className} flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[1rem] font-medium text-purple-700 sm:w-[initial] sm:flex-nowrap sm:gap-1`}>
+        <ul className={`${robotoMono.className} flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[1rem] font-medium text-gray-700 sm:w-[initial] sm:flex-nowrap sm:gap-1`}>
             <motion.span 
                 className="h-3/4 flex items-center justify-center text-[1.5rem]"
                 initial={{ y: -100,  opacity: 0 }}
                 animate={{ y: 0, opacity: 1}}
             >
-            <span className={`${robotoMono.className} font-light text-3xl`}>{"<"}</span>
             </motion.span>
             {links.map(link => (
                 <motion.li 
@@ -60,7 +59,7 @@ export default function Header() {
                     animate={{ y: 0, opacity: 1}}
                 >
                     <Link className={clsx("flex w-full items-center justify-center px-3 py-3",
-                    {"text-purple-950": activeSection === link.name,}
+                    {"text-gray-950 font-bold": activeSection === link.name,}
                     )} 
                     href={link.hash}
                     onClick={() => {
@@ -69,8 +68,8 @@ export default function Header() {
                     }}
                     >
 
-                        <span className="focus:scale-110 hover:scale-110 hover:text-purple-950 hover:font-bold transition">
-                            {link.name}
+                        <span className="focus:scale-110 hover:scale-110 hover:text-gray-950 transition">
+                            {activeSection === link.name ? `<${link.name}/>` : link.name}
                         </span>
 
                         {link.name === activeSection && (
@@ -92,7 +91,6 @@ export default function Header() {
                 initial={{ y: -100,  opacity: 0 }}
                 animate={{ y: 0, opacity: 1}}
             >
-            <span className={`${robotoMono.className} font-light text-3xl`}>{"/>"}</span>
             </motion.span>
         </ul>
         

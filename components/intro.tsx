@@ -49,40 +49,61 @@ export default function Intro() {
                 </motion.div>
     
                 {/* Social Links and CV */}
-                <motion.div className={`${robotoSerif.className} flex flex-col sm:flex-row items-start justify-start gap-4 px-4`}
-                initial={{ opacity: 0, y: 100}}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    delay: 0.1,
-                }}
+                <div className={`${robotoSerif.className} flex flex-col sm:flex-row items-start justify-start gap-4 px-4`}
                 >   
                     {/* Redirect to Github */}
-                    <a className="group flex flex-col items-center gap-2"
-                    href="https://github.com/hengbl" target="_blank">
+                    <motion.a className="group flex flex-col items-center gap-2"
+                    href="https://github.com/hengbl" target="_blank"
+                    initial={{ opacity: 0, y: 100}}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        delay: 0.1,
+                    }}>
                         <Image src="/github.png" alt="github" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
                         <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Github</span>
-                    </a>
+                    </motion.a>
     
                     {/* Redirect to Linkedin */}
-                    <a className="group flex flex-col items-center gap-2"
-                    href="https://www.linkedin.com/in/hengboonlong/" target="_blank">
+                    <motion.a className="group flex flex-col items-center gap-2"
+                    href="https://www.linkedin.com/in/hengboonlong/" target="_blank"
+                    initial={{ opacity: 0, y: 100}}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        delay: 0.15,
+                    }}>
                         <Image src="/linkedin.png" alt="linkedin" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
                         <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">LinkedIn</span>
-                    </a>
+                    </motion.a>
                     
                     {/* Download CV */}
-                    <Link className="group flex flex-col items-center gap-2"
-                    href="/CV.pdf" download={ true }>
-                        <Image src="/cv.png" alt="cv" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
-                        <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Portfolio</span>
-                    </Link>
+                    <motion.div
+                    initial={{ opacity: 0, y: 100}}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        delay: 0.2,
+                    }}>
+                        <Link className="group flex flex-col items-center gap-2"
+                        href="/CV.pdf" download={ true }>
+                            <Image src="/curriculum-vitae.png" alt="cv" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
+                            <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Portfolio</span>
+                        </Link>
+                    </motion.div>
+                    
     
                     {/* Redirect to Contact Me section */}
-                    <Link href="#contact" className="group flex flex-col items-center gap-2">
-                        <Image src="/mail.png" alt="email" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
-                        <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Email</span>
-                    </Link>
-                </motion.div>
+                    <motion.div
+                    initial={{ opacity: 0, y: 100}}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        delay: 0.25,
+                    }}>
+                        <Link href="#contact" className="group flex flex-col items-center gap-2">
+                            <Image src="/email.png" alt="email" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
+                            <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Email</span>
+                        </Link>
+                    </motion.div>
+                    
+                </div>
               </div>
           </div>
       </section>

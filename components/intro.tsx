@@ -107,7 +107,9 @@ export default function Intro() {
               </div>
           </div>
 
-          <div className="flex flex-col">
+          <motion.div className="flex flex-col"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}>
             <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
                 <div className="mouse-icon w-8 h-12 border-2 border-gray-700 rounded-full flex items-center justify-center overflow-hidden">
                 <motion.div
@@ -125,7 +127,7 @@ export default function Intro() {
                 </div>
             </div>
             <span className="absolute bottom-20 translate-y-7 -translate-x-1/2 ">Scroll</span>
-          </div>
+          </motion.div>
           
 
       </section>

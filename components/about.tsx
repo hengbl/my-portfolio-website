@@ -31,9 +31,8 @@ export default function About() {
         <SectionHeading>{`<`}About Me{`/>`}</SectionHeading>
 
         <div className="flex items-end"> 
-          <Image src="/hbl.png" alt="Me" width="275" height="369" priority={true} 
-          className="w-1/4" /> 
-          <div className="w-3/4 pl-4 transform skew-x-6 bg-gray-100 border border-black/5 p-5 inline-block rounded-lg"> 
+          
+          <div className="w-3/4 pl-4 transform -skew-x-6 bg-gray-100 border border-black/5 p-5 inline-block rounded-lg"> 
             <p className="mb-3">
                 Hello! I'm currently an undergraduate at the <span className="font-medium">National University of Singapore (NUS)</span> pursuing a <span className="font-medium">Bachelor of Science in Business Analytics</span>.{" "}
                 My academic and professional journey is fueled by a profound passion for uncovering the hidden stories within data. I specialise in Machine Learning, striving to transform complex data into actionable insights and innovative solutions.{" "}
@@ -44,6 +43,8 @@ export default function About() {
                 Currently, I'm exploring culinary arts to prepare myself for my 1-year <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in <span className="font-medium">Toronto, Canada</span> starting August 2024.
             </p>
           </div>
+          <Image src="/hbl.png" alt="Me" width="275" height="369" priority={true} 
+          className="w-1/4" /> 
         </div>
         
     </section>

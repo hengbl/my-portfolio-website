@@ -15,7 +15,7 @@ export default function Intro() {
     const { ref } = useSectionInView("Home", 0.5);
   
     return (
-      <section ref={ref} id="home" className={`${robotoMono.className} flex flex-col h-screen items-center justify-center mb-28 max-w-[70rem] mx-auto sm:mt-[-10rem] sm:mb-[-1rem] scroll-mt-[100rem]`}>
+      <section ref={ref} id="home" className={`${robotoMono.className} relative flex flex-col h-screen items-center justify-center mb-28 max-w-[70rem] mx-auto sm:mt-[-10rem] scroll-mt-[100rem]`}>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-center w-full">
   
               {/* Profile Image */}
@@ -106,6 +106,30 @@ export default function Intro() {
                 </div>
               </div>
           </div>
+
+          <motion.div className="flex flex-col"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}>
+            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                <div className="mouse-icon w-8 h-12 border-2 border-gray-700 rounded-full flex items-center justify-center overflow-hidden">
+                <motion.div
+                    className="scroll-dot w-2 h-2 bg-gray-700 rounded-full"
+                    initial={{ y: -10, opacity: 1 }}
+                    animate={{ y: [-10, 10], opacity: [1, 0.2] }}
+                    transition={{
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 1.5,
+                    ease: "easeInOut",
+                    repeatDelay: 0.5
+                    }}
+                />
+                </div>
+            </div>
+            <span className="absolute bottom-20 translate-y-7 -translate-x-1/2 ">Scroll</span>
+          </motion.div>
+          
+
       </section>
     )
   }

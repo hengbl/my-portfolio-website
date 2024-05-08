@@ -13,6 +13,8 @@ const robotoSerif = Roboto_Serif({ weight:["400","700"], subsets: ['latin'] });
 
 export default function Intro() {
     const { ref } = useSectionInView("Home", 0.5);
+
+    const mailtoLink = `mailto:${"boonlong.heng@u.nus.edu"}`;
   
     return (
       <section ref={ref} id="home" className={`${robotoMono.className} relative flex flex-col h-screen items-center justify-center mb-28 max-w-[70rem] mx-auto sm:mt-[-10rem] scroll-mt-[100rem]`}>
@@ -90,14 +92,14 @@ export default function Intro() {
                     </motion.div>
                     
     
-                    {/* Redirect to Contact Me section */}
+                    {/* Redirect to Email */}
                     <motion.div
                     initial={{ opacity: 0, y: 100}}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                         delay: 0.25,
                     }}>
-                        <Link href="#contact" className="group flex flex-col items-center gap-2">
+                        <Link href={mailtoLink} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-2">
                             <Image src="/email.png" alt="email" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
                             <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Email</span>
                         </Link>

@@ -74,7 +74,7 @@ export const experiencesData = [
 export const projectsData = [
   {
     title: "TwitterBotGNN",
-    description: "Trained and fine-tuned Graph Neural Networks for node classification of Twitter bots using the latest Twibot-22 dataset for Twitter bot detection in the community.",
+    description: "A hybrid-relationship based Graph Convolutional Network model for social bot detection and bias analysis, trained using the Twibot-22 dataset.",
     tags: ["Numpy", "Pandas", "Seaborn", "Scikit-Learn", "XGBoost", "PyTorch", "PyMongo"],
     imageUrl: gnnImg,
     githubUrl: "https://github.com/hengbl/TwitterBotGNN",

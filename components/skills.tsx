@@ -35,7 +35,7 @@ export default function Skills() {
                 {
                     techStackUrl.map((item, index) => (
                         <motion.li key={index}
-                        className="bg-white border border-black/[0.1] rounded-2xl px-5 py-3"
+                        className="bg-white border border-black/[0.1] rounded-2xl px-5 py-3 dark:bg-white/10"
                         variants={fadeInAnimationVariants}
                         initial="initial"
                         whileInView="animate"
@@ -45,7 +45,7 @@ export default function Skills() {
                         custom={index}>
                             <div className="flex flex-col justify-center items-center">
                                 <Image src={item.url} alt={item.skill} width="40" height="40" />
-                                <span className={`${robotoMono.className} text-gray-500 text-[0.9rem] mt-1`}>{item.skill}</span>
+                                <span className={`${robotoMono.className} text-gray-500 text-[0.9rem] mt-1 dark:text-white/80`}>{item.skill}</span>
                             </div>
                             
                         </motion.li>
@@ -61,7 +61,7 @@ export default function Skills() {
                 {
                     libraries.map((item, index) => (
                         <motion.li key={index}
-                        className="bg-white border border-black/[0.1] rounded-2xl px-5 py-3"
+                        className="bg-white border border-black/[0.1] rounded-2xl px-5 py-3 dark:bg-white/10"
                         variants={fadeInAnimationVariants}
                         initial="initial"
                         whileInView="animate"
@@ -71,7 +71,7 @@ export default function Skills() {
                         custom={index}>
                             <div className="flex flex-col justify-center items-center">
                                 <Image src={item.url} alt={item.skill} width="40" height="40" />
-                                <span className={`${robotoMono.className} text-gray-500 text-[0.9rem] mt-1`}>{item.skill}</span>
+                                <span className={`${robotoMono.className} text-gray-500 text-[0.9rem] mt-1 dark:text-white/80`}>{item.skill}</span>
                             </div>
                             
                         </motion.li>

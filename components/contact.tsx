@@ -28,7 +28,7 @@ export default function Contact() {
       once: true,
     }}>
         <SectionHeading>{`<`}Contact Me{`/>`}</SectionHeading>
-        <p className="text-center justify-center mb-5 -mt-6 text-gray-700">
+        <p className="text-center justify-center mb-5 -mt-6 text-gray-700 dark:text-gray-300">
           I'll be happy to schedule a ☕ chat online or irl with you!
         </p>
         <form className="flex flex-col"
@@ -43,13 +43,14 @@ export default function Contact() {
           toast.success('Email sent successfully!');
 
         }}>
-            <input type="email" className="h-14 rounded-lg border border-black/10 px-4" 
+            <input type="email" className="h-14 rounded-lg border border-black/10 px-4
+            dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none" 
             placeholder='Your email'
             name="senderEmail" 
             required
             maxLength={500} />
             
-            <textarea className="h-52 my-3 rounded-l-lg border border-black/10 p-4" 
+            <textarea className="h-52 my-3 rounded-l-lg border border-black/10 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none" 
             placeholder='Your message' 
             name="message" 
             required

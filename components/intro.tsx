@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { Roboto_Mono, Roboto_Serif } from 'next/font/google';
 import Link from 'next/link';
 import { useSectionInView } from '@/lib/hooks';
+import { FaGithub } from "react-icons/fa";
+
 
 const robotoMono = Roboto_Mono({ weight:["100", "400","700"], subsets: ['latin'] });
 const robotoSerif = Roboto_Serif({ weight:["400","700"], subsets: ['latin'] });
@@ -45,7 +47,7 @@ export default function Intro() {
                 animate={{ opacity: 1, y: 0 }}
                 >
                     <h1 className={`${robotoSerif.className} text-5xl/[4rem] mb-4`}>Hello, my <br/> name is  <span className="font-bold">Boon Long</span> 👋</h1> 
-                    <span className="font-normal text-xl text-gray-800">I'm an aspiring <span className='font-bold'>Data Scientist / Engineer</span> from the sunny island of Singapore</span>
+                    <span className="font-normal text-xl text-gray-800 dark:text-gray-200">I'm an aspiring <span className='font-bold'>Data Scientist / Engineer</span> from the sunny island of Singapore</span>
                     <span className="font-thin">|</span>
                     <Image src="/singapore.png" alt="Singapore" width="30" height="30" className="ml-3 inline-block" />
                 </motion.div>
@@ -54,15 +56,15 @@ export default function Intro() {
                 <div className={`${robotoSerif.className} flex flex-col sm:flex-row items-start justify-start gap-4 px-4`}
                 >   
                     {/* Redirect to Github */}
-                    <motion.a className="group flex flex-col items-center gap-2"
+                    <motion.a className="group flex flex-col items-center gap-2 dark:text-white"
                     href="https://github.com/hengbl" target="_blank"
                     initial={{ opacity: 0, y: 100}}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                         delay: 0.1,
                     }}>
-                        <Image src="/github.png" alt="github" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
-                        <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Github</span>
+                        <FaGithub className="text-[2.5rem] group-hover:animate-bounce transition mb-0" />
+                        <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold dark:text-gray-200">Github</span>
                     </motion.a>
     
                     {/* Redirect to Linkedin */}
@@ -74,7 +76,7 @@ export default function Intro() {
                         delay: 0.15,
                     }}>
                         <Image src="/linkedin.png" alt="linkedin" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
-                        <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">LinkedIn</span>
+                        <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold dark:text-gray-200">LinkedIn</span>
                     </motion.a>
                     
                     {/* Download CV */}
@@ -87,7 +89,7 @@ export default function Intro() {
                         <Link className="group flex flex-col items-center gap-2"
                         href="/CV.pdf" target="_blank">
                             <Image src="/curriculum-vitae.png" alt="cv" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
-                            <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Portfolio</span>
+                            <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold dark:text-gray-200">Portfolio</span>
                         </Link>
                     </motion.div>
                     
@@ -101,7 +103,7 @@ export default function Intro() {
                     }}>
                         <Link href={mailtoLink} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-2">
                             <Image src="/email.png" alt="email" width="40" height="40" className="group-hover:animate-bounce transition mb-0" />
-                            <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold">Email</span>
+                            <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold dark:text-gray-200">Email</span>
                         </Link>
                     </motion.div>
                     
@@ -114,9 +116,9 @@ export default function Intro() {
           animate={{ opacity: 1, scale: 1 }}>
             <Link href="#about">
                 <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                    <div className="mouse-icon w-8 h-12 border-2 border-gray-700 rounded-full flex items-center justify-center overflow-hidden">
+                    <div className="mouse-icon w-8 h-12 border-2 border-gray-700 dark:border-gray-300 rounded-full flex items-center justify-center overflow-hidden">
                     <motion.div
-                        className="scroll-dot w-2 h-2 bg-gray-700 rounded-full"
+                        className="scroll-dot w-2 h-2 bg-gray-700 dark:bg-gray-300 rounded-full"
                         initial={{ y: -10, opacity: 1 }}
                         animate={{ y: [-10, 10], opacity: [1, 0.2] }}
                         transition={{
@@ -129,7 +131,7 @@ export default function Intro() {
                     />
                     </div>
                 </div>
-                <span className="absolute bottom-20 translate-y-7 -translate-x-1/2 ">Scroll</span>
+                <span className="absolute bottom-20 translate-y-7 -translate-x-1/2 dark:text-gray-300">Scroll</span>
             </Link>
           </motion.div>
           

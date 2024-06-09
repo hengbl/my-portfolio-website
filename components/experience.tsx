@@ -13,6 +13,14 @@ import { useTheme } from '@/context/theme-context';
 
 const robotoMono = Roboto_Mono({ weight: "400", subsets: ['latin'] });
 
+const useTimelineInView = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  return { ref, inView };
+};
+
 export default function Experience() {
 
   const { ref } = useSectionInView("Experience", 0.5);
@@ -23,9 +31,7 @@ export default function Experience() {
         <SectionHeading>{`<`}My Experience{`/>`}</SectionHeading>
         <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => {
-          const { ref, inView } = useInView({
-            triggerOnce: true,
-          });
+          const { ref, inView } = useTimelineInView()
           return (
             <div key={index} ref={ref} className="vertical-timeline-element">
               <VerticalTimelineElement

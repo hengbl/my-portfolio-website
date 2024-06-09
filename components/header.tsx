@@ -16,7 +16,7 @@ export default function Header() {
   
   const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  return <header className="z-[999] relative">
+  return <header className="z-[999] relative mb-[-8rem] sm:mb-auto">
 
    <motion.div
    initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export default function Header() {
    </motion.div>
 
     <motion.div 
-        className="fixed top-0 left-3/4 h-[4.5rem] w-full rounded-none border border-black border-opacity-20
+        className="fixed top-0 left-1/2 sm:left-3/4 h-[4.5rem] w-full rounded-none border border-black border-opacity-20
         bg-white bg-opacity-80 shadow-lg shadow-black/[0.05] backdrop-blur-[0.5rem]
         sm:top-6 sm:h-[3.25rem] sm:w-[40rem] sm:rounded-full
         dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
@@ -44,7 +44,7 @@ export default function Header() {
     >
     </motion.div>
 
-    <nav className="flex fixed top-[0.15rem] left-3/4 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
+    <nav className="flex fixed top-[0.15rem] left-1/2 sm:left-3/4 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         
         <ul className={`${robotoMono.className} flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[1rem] font-medium text-gray-700 sm:w-[initial] sm:flex-nowrap sm:gap-1`}>
             <motion.span 

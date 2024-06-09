@@ -25,14 +25,14 @@ export default function About() {
       scale: scaleProgress,
       opacity: opacityProgress
     }}>
-    <section ref={ref} className="mb-28 max-w-[70rem] text-start leading-8 sm:mb-40 scroll-mt-28 "
+    <section ref={ref} className="mb-28 max-w-[70rem] sm:text-start leading-8 sm:mb-40 scroll-mt-28 "
     id="about"
     >
         <SectionHeading>{`<`}About Me{`/>`}</SectionHeading>
 
         <div className="flex items-end"> 
           
-          <div className="w-3/4 pl-4 transform -skew-x-6 bg-gray-100 border border-black/5 p-5 inline-block rounded-lg dark:bg-white/10"> 
+          <div className="sm:w-3/4 pl-4 transform sm:-skew-x-6 -skew-x-2 bg-gray-100 border border-black/5 p-5 inline-block rounded-lg dark:bg-white/10"> 
             <p className="mb-3">
                 Hello! I'm currently an undergraduate at the <span className="font-medium">National University of Singapore (NUS)</span> pursuing a <span className="font-medium">Bachelor of Science in Business Analytics</span>.{" "}
                 My academic and professional journey is fueled by a profound passion for uncovering the hidden stories within data. I specialise in Machine Learning, striving to transform complex data into actionable insights and innovative solutions.{" "}
@@ -44,7 +44,7 @@ export default function About() {
             </p>
           </div>
           <Image src="/hbl.png" alt="Me" width="275" height="369" priority={true} 
-          className="w-1/4" /> 
+          className="w-1/4 hidden sm:block" /> 
         </div>
         
     </section>

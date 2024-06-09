@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import SectionHeading from './section-heading';
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useSectionInView } from '@/lib/hooks';
+import Image from 'next/image';
 
 export default function About() {
 
@@ -24,23 +25,29 @@ export default function About() {
       scale: scaleProgress,
       opacity: opacityProgress
     }}>
-      <section ref={ref} className="mb-28 max-w-[60rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-      id="about"
-      >
-          <SectionHeading>{`<`}About Me{`/>`}</SectionHeading>
-          <p className="mb-3">
-              I'm currently an undergraduate at <span className="font-medium">National University of Singapore (NUS)</span> pursuing a <span className="font-medium">Bachelor of Science in Business Analytics</span>.{" "}
-              I have always been fascinated by the troves of insights that lie within raw data hence I enjoy exploring Machine / Deep Learning models to transform the data for problem-solving.{" "}
-              Besides Data Science, I also picked up <span className="italic">Web Development</span> and <span className="italic">Data Engineering</span> to better allow me to understand the entire Software Development Lifecycle and deploy ML solutions that are both flexible and scalable.{" "}
-              I'm proficient in numerous data science libraries such as <span className="font-medium">Pandas, Seaborn, Scikit-Learn and PyTorch</span>. My core stack is <span className="font-medium">React (Next.js), Python, MongoDB and MySQL</span>.{" "}
-              I also have experience in Cloud Computing, such as <span className="font-medium">AWS EC2, S3, RDS</span> and <span className="font-medium">GCP Storage, Function, BigQuery.</span>
-          </p>
-          <br></br>
-          <p> 
-              Beyond coding, I'm a fitness enthusiast and regularly keep myself active through <span className="font-medium">weight-lifting and calisthenics</span>. I also play sports such as <span className="font-medium">floorball and basketball</span>.{" "}
-              Currently, I'm learning how to cook so that I can prepare meals for myself during my 1-year <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in <span className="font-medium">Toronto, Canada</span> starting August 2024.
-          </p>
+    <section ref={ref} className="mb-28 max-w-[70rem] sm:text-start leading-8 sm:mb-40 scroll-mt-28 "
+    id="about"
+    >
+        <SectionHeading>{`<`}About Me{`/>`}</SectionHeading>
+
+        <div className="flex items-end"> 
+          
+          <div className="sm:w-3/4 pl-4 transform sm:-skew-x-6 -skew-x-2 bg-gray-100 border border-black/5 p-5 inline-block rounded-lg dark:bg-white/10"> 
+            <p className="mb-3">
+                Hello! I'm currently an undergraduate at the <span className="font-medium">National University of Singapore (NUS)</span> pursuing a <span className="font-medium">Bachelor of Science in Business Analytics</span>.{" "}
+                My academic and professional journey is fueled by a profound passion for uncovering the hidden stories within data. I specialise in Machine Learning, striving to transform complex data into actionable insights and innovative solutions.{" "}
+                Besides Data Science, I also picked up <span className="italic">Web Development</span> and <span className="italic">Data Engineering</span> to equip me with the skills to manage the entire Software Development Lifecycle (SDLC) and deploy scalable ML solutions.
+            </p>
+            <p> 
+                Beyond coding, I'm a fitness enthusiast and regularly keep myself active through <span className="font-medium">weight-lifting</span> and <span className="font-medium">calisthenics</span>. I also enjoy team sports such as <span className="font-medium">floorball</span> and <span className="font-medium">basketball</span>.{" "}
+                Currently, I'm exploring culinary arts to prepare myself for my 1-year <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in <span className="font-medium">Toronto, Canada</span> starting August 2024.
+            </p>
+          </div>
+          <Image src="/hbl.png" alt="Me" width="275" height="369" priority={true} 
+          className="w-1/4 hidden sm:block" /> 
+        </div>
+        
     </section>
-    </motion.div>
+  </motion.div>
   )
 }

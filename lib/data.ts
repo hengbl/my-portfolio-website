@@ -7,6 +7,7 @@ import bbImg from "@/public/biasbuster.png";
 import chImg from "@/public/connecthub.png";
 import hdbImg from "@/public/hdb.png";
 import airflowImg from "@/public/airflow.png";
+import gnnImg from "@/public/gnn.png";
 
 export const links = [
   {
@@ -72,6 +73,20 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "TwitterBotGNN",
+    description: "A hybrid-relationship based Graph Convolutional Network model for social bot detection and bias analysis, trained using the Twibot-22 dataset.",
+    tags: ["Numpy", "Pandas", "Seaborn", "Scikit-Learn", "XGBoost", "PyTorch", "PyMongo"],
+    imageUrl: gnnImg,
+    githubUrl: "https://github.com/hengbl/TwitterBotGNN",
+  },
+  {
+    title: "HDB Resale Price Prediction",
+    description: "Trained multiple classification models to accurately predict prices of SG HDB resale flats from 2012 to 2021 based on flat features as well as nearby amenities and transportation.",
+    tags: ["Numpy", "Pandas", "Seaborn", "GeoPy", "Scikit-Learn", "XGBoost"],
+    imageUrl: hdbImg,
+    githubUrl: "https://github.com/hengbl/HDB-Resale-Price-Prediction",
+  },
+  {
     title: "BiasBusters",
     description:
       "A telegram bot that provides sentiment analysis on any NUS module through Reddit reviews and using our pre-trained ML model.",
@@ -94,13 +109,6 @@ export const projectsData = [
     imageUrl: airflowImg,
     githubUrl: "https://github.com/siruislybro/IS3107_Group32",
   },
-  {
-    title: "HDB Resale Price Prediction",
-    description: "Trained multiple classification models to accurately predict prices of SG HDB resale flats from 2012 to 2021 based on flat features as well as nearby amenities and transportation.",
-    tags: ["Numpy", "Pandas", "Seaborn", "GeoPy", "Scikit-Learn", "XGBoost"],
-    imageUrl: hdbImg,
-    githubUrl: "https://github.com/hengbl/HDB-Resale-Price-Prediction",
-  }
 ] as const;
 
 export const techStackUrl = [

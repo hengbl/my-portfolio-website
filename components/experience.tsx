@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useContext } from 'react';
+import React from 'react';
 import SectionHeading from './section-heading';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { experiencesData } from '@/lib/data';
-import { useSectionInView } from '@/lib/hooks';
 import { useInView } from "react-intersection-observer";
 import { Roboto_Mono } from 'next/font/google';
 import Image from 'next/image';
@@ -15,6 +14,7 @@ const robotoMono = Roboto_Mono({ weight: "400", subsets: ['latin'] });
 
 const useTimelineInView = () => {
   const { ref, inView } = useInView({
+    threshold: 0.5,
     triggerOnce: true,
   });
 
@@ -23,17 +23,16 @@ const useTimelineInView = () => {
 
 export default function Experience() {
 
-  const { ref } = useSectionInView("Experience", 0.5);
   const { theme } =  useTheme();
+
+  const { ref, inView } = useTimelineInView();
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28">
         <SectionHeading>{`<`}My Experience{`/>`}</SectionHeading>
         <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => {
-          const { ref, inView } = useTimelineInView()
-          return (
-            <div key={index} ref={ref} className="vertical-timeline-element">
+        {experiencesData.map((item, index) => (
+            <div key={index} className="vertical-timeline-element">
               <VerticalTimelineElement
                 contentStyle={{
                   background: 
@@ -63,8 +62,8 @@ export default function Experience() {
                 </p>
               </VerticalTimelineElement>
             </div>
-          );
-        })}
+          )
+        )}
       </VerticalTimeline>
     </section>
   );

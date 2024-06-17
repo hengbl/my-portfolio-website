@@ -46,12 +46,12 @@ export const experiencesData = [
     date: "Aug 2024 - Jul 2025",
   },
   {
-    title: "AI/Data Intern, Deloitte Consulting",
+    title: "AI & Data Intern, Deloitte Consulting",
     location: "Singapore",
     description:
-      "(Incoming intern)",
+      "I am part of the Ops team in the project to automate Identity and Access Management (IAM) for healthcare agencies in Singapore.",
     icon: React.createElement(LuBrainCircuit),
-    date: "Jul 2024 - Aug 2024",
+    date: "Jun 2024 - Aug 2024",
   },
   {
     title: "Data Analyst Intern, Affyn",

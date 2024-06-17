@@ -79,7 +79,7 @@ export default function Intro() {
                         <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold dark:text-gray-200">LinkedIn</span>
                     </motion.a>
                     
-                    {/* Download CV */}
+                    {/* Open CV in new tab */}
                     <motion.div
                     initial={{ opacity: 0, y: 100}}
                     animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export default function Intro() {
                         delay: 0.2,
                     }}>
                         <Link className="group flex flex-col items-center gap-2"
-                        href="/CV.pdf" target="_blank">
+                        href="/Boon_Long_CV.pdf" target="_blank">
                             <Image src="/curriculum-vitae.png" alt="cv" width="40" height="40" className="h-[1.875rem] w-[1.875rem] sm:h-[2.5rem] sm:w-[2.5rem] group-hover:animate-bounce transition mb-0" />
                             <span className="text-sm mt-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 font-bold dark:text-gray-200">Portfolio</span>
                         </Link>

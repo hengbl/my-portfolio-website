@@ -44,13 +44,13 @@ export default function Contact() {
 
         }}>
             <input type="email" className="h-14 rounded-lg border border-black/10 px-4
-            dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none" 
+            dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:text-black dark:outline-none" 
             placeholder='Your email'
             name="senderEmail" 
             required
             maxLength={500} />
             
-            <textarea className="h-52 my-3 rounded-l-lg border border-black/10 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none" 
+            <textarea className="h-52 my-3 rounded-l-lg border border-black/10 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:text-black dark:outline-none" 
             placeholder='Your message' 
             name="message" 
             required

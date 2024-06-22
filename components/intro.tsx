@@ -111,7 +111,7 @@ export default function Intro() {
               </div>
           </div>
 
-          <motion.div className="flex flex-col"
+          <motion.div className="hidden sm:flex flex-col"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}>
             <Link href="#about">

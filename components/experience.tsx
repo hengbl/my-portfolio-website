@@ -9,30 +9,42 @@ import { useInView } from "react-intersection-observer";
 import { Roboto_Mono } from 'next/font/google';
 import Image from 'next/image';
 import { useTheme } from '@/context/theme-context';
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useEffect } from 'react';
+import { SectionName } from "@/lib/types";
+
 
 const robotoMono = Roboto_Mono({ weight: "400", subsets: ['latin'] });
 
-const useTimelineInView = () => {
+function useSectionInView(sectionName : SectionName, threshold = 0.5) {
   const { ref, inView } = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
+      threshold,
   });
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
-  return { ref, inView };
-};
+  useEffect(() => {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
+      setActiveSection(sectionName);
+    }
+  }, [inView, setActiveSection, timeOfLastClick, sectionName])
+
+  return {
+      ref, inView
+  }
+}
 
 export default function Experience() {
 
   const { theme } =  useTheme();
 
-  const { ref, inView } = useTimelineInView();
+  const { ref, inView } = useSectionInView("Experience", 0.25);
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28">
         <SectionHeading>{`<`}My Experience{`/>`}</SectionHeading>
         <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
-            <div key={index} className="vertical-timeline-element">
+            <React.Fragment key={index}>
               <VerticalTimelineElement
                 contentStyle={{
                   background: 
@@ -46,7 +58,7 @@ export default function Experience() {
                   borderRight: 
                   theme === "light" ? '0.4rem solid #9ca3af' : "0.4rem solid rgba(255, 255, 255, 0.5)",
                 }}
-                visible={inView}
+                visible={ inView }
                 date={item.date}
                 icon={item.icon}
                 iconStyle={{
@@ -61,7 +73,7 @@ export default function Experience() {
                   {item.description}
                 </p>
               </VerticalTimelineElement>
-            </div>
+            </React.Fragment>
           )
         )}
       </VerticalTimeline>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import { Roboto_Mono, Shadows_Into_Light } from 'next/font/google';
@@ -12,9 +12,28 @@ import Image from 'next/image';
 const robotoMono = Roboto_Mono({ weight:["100", "400", "700"], subsets: ['latin'] });
 const robotoSerif = Shadows_Into_Light({ weight: "400", subsets: ['latin'] });
 
+interface HamburgerIconProps {
+    isOpen: boolean;
+    toggleMenu: () => void;
+  }
+  
+  const HamburgerIcon: React.FC<HamburgerIconProps> = ({ isOpen, toggleMenu }) => (
+    <button
+      className="fixed top-4 right-4 z-5"
+      onClick={toggleMenu}
+    >
+      <div className={`w-6 h-0.5 bg-black dark:bg-gray-300 mb-1 rounded-full transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+      <div className={`w-6 h-0.5 bg-black dark:bg-gray-300 mb-1 transition-all rounded-full ${isOpen ? 'opacity-0' : ''}`} />
+      <div className={`w-6 h-0.5 bg-black dark:bg-gray-300 transition-all rounded-full ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+    </button>
+  );
+
 export default function Header() {
   
   const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+  const toggleMenu = (): void => setIsMenuOpen(!isMenuOpen);
 
   return <header className="z-[999] relative mb-[-8rem] sm:mb-auto">
 
@@ -34,17 +53,22 @@ export default function Header() {
     </Link>
    </motion.div>
 
-    <motion.div 
-        className="fixed top-0 left-1/2 sm:left-3/4 h-[4.5rem] w-full rounded-none border border-black border-opacity-20
+   <motion.div
+   className="fixed top-7 right-7"
+   initial={{ y: -100, x: "-50%", opacity: 0 }}
+   animate={{ y: 0, x: "-50%", opacity: 1}}>
+        <HamburgerIcon isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+   </motion.div>
+   
+    <div 
+        className={`fixed top-0 sm:left-3/4 sm:-translate-x-80 h-[4.5rem] w-full rounded-none border border-black border-opacity-20
         bg-white bg-opacity-80 shadow-lg shadow-black/[0.05] backdrop-blur-[0.5rem]
-        sm:top-6 sm:h-[3.25rem] sm:w-[40rem] sm:rounded-full
-        dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
-        initial={{ y: -100, x: "-50%", opacity: 0 }}
-        animate={{ y: 0, x: "-50%", opacity: 1}}
+        sm:top-6 sm:h-[3.25rem] sm:w-[37rem] sm:rounded-lg
+        dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 ${isMenuOpen ? 'block' : 'hidden'} transform sm:skew-x-12`}
     >
-    </motion.div>
+    </div>
 
-    <nav className="flex fixed top-[0.15rem] left-1/2 sm:left-3/4 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
+    <nav className={`flex fixed top-[0.15rem] left-1/2 sm:left-3/4 h-12 -translate-x-1/2 sm:-translate-x-80 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
         
         <ul className={`${robotoMono.className} flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[1rem] font-medium text-gray-700 sm:w-[initial] sm:flex-nowrap sm:gap-1`}>
             <motion.span 

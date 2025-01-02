@@ -43,7 +43,7 @@ export default function About() {
                 Currently, I'm doing a 1-year internship as a Software Engineer at PolicyMe as part of the <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in <span className="font-medium">Toronto, Canada</span> since August 2024.
             </p>
           </div>
-          <Image src="/hbl.png" alt="Me" width="275" height="369" priority={true} 
+          <Image src="/camera_pose.png" alt="Me" width="448" height="512" priority={true} 
           className="w-1/4 hidden sm:block" /> 
         </div>
         

@@ -41,7 +41,7 @@ export const experiencesData = [
     title: "Software Engineer Intern, Policyme",
     location: "Toronto, Ontario",
     description:
-      "(Incoming intern)",
+      "PolicyMe is a fast-growing Canadian InsurTech scale-up that provides simple and affordable insurance products to Canadians through its sophisticated digital platform. I am supporting the stability of the platform by enhancing its Sentry monitoring and alerting system.",
     icon: React.createElement(MdOutlinePolicy),
     date: "Aug 2024 - Jul 2025",
   },

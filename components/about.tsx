@@ -40,7 +40,7 @@ export default function About() {
             </p>
             <p> 
                 Beyond coding, I'm a fitness enthusiast and regularly keep myself active through <span className="font-medium">weight-lifting</span> and <span className="font-medium">calisthenics</span>. I also enjoy team sports such as <span className="font-medium">floorball</span> and <span className="font-medium">basketball</span>.{" "}
-                Currently, I'm exploring culinary arts to prepare myself for my 1-year <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in <span className="font-medium">Toronto, Canada</span> starting August 2024.
+                Currently, I'm doing a 1-year internship as a Software Engineer at PolicyMe as part of the <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in <span className="font-medium">Toronto, Canada</span> since August 2024.
             </p>
           </div>
           <Image src="/hbl.png" alt="Me" width="275" height="369" priority={true} 

@@ -66,7 +66,7 @@ export default function Intro() {
                             duration: 0.2,
                         }}
                     >
-                        <Image src="/profile-pic.png" alt="Portrait" 
+                        <Image src="/dp.png" alt="Portrait" 
                         width="300" height="300" 
                         priority={true} 
                         className="rounded-full object-cover border-[0.2rem] border-white shadow-xl w-[12rem] h-[12rem] sm:w-[20rem] sm:h-[20rem]" 

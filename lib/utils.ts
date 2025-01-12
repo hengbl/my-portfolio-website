@@ -1,4 +1,4 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "./authOption";
 import { getServerSession } from "next-auth";
 
 export const validateString = (value: unknown, maxLength: number) => {
@@ -37,6 +37,7 @@ export const isLoggedIn = async () => {
 /**
  * Define all fetch actions here 
  * Note that we can only use these inside client component
+ * as server cannot find the relative URL 
  */
 
 export async function createPost(title: string, content: string) {

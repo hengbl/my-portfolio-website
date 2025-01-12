@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 import { Roboto_Mono, Roboto_Serif } from 'next/font/google';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import { useSectionInView } from '@/lib/hooks';
 import { FaGithub } from "react-icons/fa";
 
@@ -19,6 +20,7 @@ export default function Intro() {
     const mailtoLink = `mailto:${"boonlong.heng@u.nus.edu"}`;
     const [typedText, setTypedText] = useState('');
     const [isTypingComplete, setIsTypingComplete] = useState(false);
+    const { data: session } = useSession();
 
     useEffect(() => {
         const fullText = "An aspiring Data Scientist / Engineer from the sunny island of Singapore";
@@ -79,8 +81,14 @@ export default function Intro() {
                     <motion.div className="mb-10 mt-4 px-4 text-xl text-center font-medium !leading-[1.5] sm:text-[1.7rem] sm:text-left"
                     initial={{ opacity: 0, y: 100}}
                     animate={{ opacity: 1, y: 0 }}
-                    >
-                        <h1 className={`${robotoSerif.className} text-3xl/[2.5rem] sm:text-5xl/[4rem] mb-4`}>Hello, my <br/> name is  <span className="font-bold">Boon Long</span> 👋</h1> 
+                    >   
+                        <h1 className={`${robotoSerif.className} text-3xl/[2.5rem] sm:text-5xl/[4rem] mb-4`}>
+                            {session ? (
+                                <><span className="font-bold">Boon Long</span>, <br/> Welcome back 👋</>
+                            ) : (
+                                <>Hello, my <br/> name is  <span className="font-bold">Boon Long</span> 👋</>
+                            )}
+                        </h1> 
                         <div className="font-normal text-base sm:text-xl text-gray-800 dark:text-gray-200">
                             <span className="typing-text font-normal text-base sm:text-xl text-gray-700 dark:text-gray-300">{renderTypedText(typedText)}</span>
                             {isTypingComplete && (

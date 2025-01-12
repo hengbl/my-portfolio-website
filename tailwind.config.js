@@ -12,8 +12,18 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      animation: {
+        'bounce': 'bounce 1s infinite',
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: [], // Disable daisyUI themes
+    base: false, 
+    styled: true, // Use daisyUI's component styles
+    utils: true, // Use daisyUI's utility classes
+  },
   darkMode: 'class',
 };

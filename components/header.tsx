@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
+import { SectionName } from '@/lib/types';
 import { Roboto_Mono, Shadows_Into_Light } from 'next/font/google';
 import Link from 'next/link';
 import clsx from "clsx";
 import { useActiveSectionContext } from '@/context/active-section-context';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 
 const robotoMono = Roboto_Mono({ weight:["100", "400", "700"], subsets: ['latin'] });
 const robotoSerif = Shadows_Into_Light({ weight: "400", subsets: ['latin'] });
@@ -32,20 +34,35 @@ export default function Header() {
   
   const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const toggleMenu = (): void => setIsMenuOpen(!isMenuOpen);
+  const handleNavigation = (e: React.MouseEvent, hash: string, name: SectionName) => {
+    e.preventDefault();
+    setActiveSection(name);
+    setTimeOfLastClick(Date.now());
+    
+    const isHomePage = pathname === '/';
+    if (!isHomePage) {
+        router.push(`/${hash}`);
+        return;
+    }
+
+    // If already on homepage, just scroll to section
+    const element = document.getElementById(hash.replace('#', ''));
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return <header className="z-[999] relative mb-[-8rem] sm:mb-auto">
 
    <motion.div
    initial={{ opacity: 0 }}
    animate={{ opacity: 1 }}
-   onClick={() => {
-    window.location.href="/"
-   }}
    >
     <Link href="/" onClick={(e) => {
-        e.preventDefault(); 
+        e.preventDefault();
+        router.push('/');
     }}
     className={`${robotoSerif.className} flex items-baseline text-3xl fixed top-[0.1rem] left-5 h-12 py-2 sm:top-[1.5rem] sm:h-[initial]`}>
         <Image src="/programmer.png" alt="profile_header" width="30" height="30" className="mr-1" />
@@ -87,9 +104,8 @@ export default function Header() {
                     {"text-gray-950 dark:text-gray-100 font-bold": activeSection === link.name,}
                     )} 
                     href={link.hash}
-                    onClick={() => {
-                        setActiveSection(link.name);
-                        setTimeOfLastClick(Date.now());
+                    onClick={(e) => {
+                        handleNavigation(e, link.hash, link.name);
                     }}
                     >
 

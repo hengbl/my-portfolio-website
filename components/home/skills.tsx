@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import SectionHeading from './section-heading';
+import SectionHeading from '../section-heading';
 import { techStackUrl, libraries} from '@/lib/data';
 import Image from 'next/image';
 import { Roboto_Mono } from 'next/font/google';

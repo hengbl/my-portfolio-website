@@ -1,13 +1,16 @@
-import About from "@/components/about";
-import Contact from "@/components/contact";
-import Experience from "@/components/experience";
+import About from "@/components/home/about";
+import Contact from "@/components/home/contact";
+import Experience from "@/components/home/experience";
 import Intro from "@/components/intro";
-import Projects from "@/components/projects";
-import Skills from "@/components/skills";
+import Projects from "@/components/home/projects";
+import Skills from "@/components/home/skills";
+import ScrollManager from '@/components/scrollManager';
 
-export default function Home() {
+export default async function Home() {
+  
   return (
     <main className="flex flex-col items-center px-4">
+      <ScrollManager />
       <Intro />
       <About />
       <Projects />

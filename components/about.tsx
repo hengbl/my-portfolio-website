@@ -40,7 +40,8 @@ export default function About() {
             </p>
             <p> 
                 Beyond coding, I'm a fitness enthusiast and regularly keep myself active through <span className="font-medium">weight-lifting</span> and <span className="font-medium">calisthenics</span>. I also enjoy team sports such as <span className="font-medium">floorball</span> and <span className="font-medium">basketball</span>.{" "}
-                Currently, I'm doing a 1-year internship as a Software Engineer at PolicyMe as part of the <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in <span className="font-medium">Toronto, Canada</span> since August 2024.
+                I spent a year in <span className="font-medium">Toronto, Canada</span> as a Software Engineer at PolicyMe as part of the <a className="underline" href="https://enterprise.nus.edu.sg/education-programmes/nus-overseas-colleges/" target="_blank">NUS Overseas College (NOC)</a> programme in August 2024.{" "}
+                After coming back to Singapore in Aug 2025, I am grateful for the opportunity to work in the anti-fraud space in Singpass as a Data Scientist intern and would continue to carry on the learnings and experience to my next stint in Tencent (WeChat)! 
             </p>
           </div>
           <Image src="/camera_pose.png" alt="Me" width="448" height="512" priority={true} 

@@ -38,6 +38,22 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Data Scientist Intern, Tencent",
+    location: "Singapore",
+    description:
+      "WeChat Safety Strategies team.",
+    icon: React.createElement(MdOutlinePolicy),
+    date: "Jan 2026 - Present",  
+  },
+  {
+    title: "Data Scientist Intern, Govtech",
+    location: "Singapore",
+    description:
+      "I was part of the Trust & Safety team in Singpass that utilized Machine Learning and Data Analytics to detect and deter fraud within the Singpass ecosystem upon login or MyInfo retrieval.",
+    icon: React.createElement(MdOutlinePolicy),
+    date: "Aug 2025 - Jan 2026",  
+  },
+  {
     title: "Software Engineer Intern, Policyme",
     location: "Toronto, Ontario",
     description:
@@ -49,7 +65,7 @@ export const experiencesData = [
     title: "AI & Data Intern, Deloitte Consulting",
     location: "Singapore",
     description:
-      "I am part of the Ops team in the project to automate Identity and Access Management (IAM) for healthcare agencies in Singapore.",
+      "I was part of the Ops team in the project to automate Identity and Access Management (IAM) for healthcare agencies in Singapore.",
     icon: React.createElement(LuBrainCircuit),
     date: "Jun 2024 - Aug 2024",
   },
